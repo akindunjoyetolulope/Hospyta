@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { TextInput, TouchableOpacity, View, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 interface Props {
   inputStyles?: string;
-  onChangeText: VoidFunction;
+  onChangeText: Dispatch<SetStateAction<string>>;
   placeholder: string;
   value: string;
   prefixIcon?: React.ReactNode;

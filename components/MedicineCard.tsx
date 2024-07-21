@@ -1,5 +1,4 @@
 import { View, Text, Image, StyleSheet } from "react-native";
-import medicineImgTwo from "@/assets/medicine2.png";
 
 export const medicineData = Array(4).fill({
   text: "Panadol (50mg) 200ta.",
@@ -20,7 +19,7 @@ export default function MedicineCard(props: Props) {
       style={styles.foregroundCard}
     >
       <View>
-        <Image source={medicineImgTwo} className="" />
+        <Image source={require("@/assets/medicine2.png")} className="" />
       </View>
       <Text className="text-[#424242] text-[10px] font-bold mt-2">{name}</Text>
       <Text className="text-[12px] font-bold mt-2">{price}</Text>

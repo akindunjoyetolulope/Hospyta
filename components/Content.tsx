@@ -2,8 +2,18 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const Content = ({ children }: any) => {
-  return <SafeAreaView style={[styles.container]}>{children}</SafeAreaView>;
+interface Props {
+  children: any;
+  className?: string;
+}
+
+const Content = (props: Props) => {
+  const { children, className = "" } = props;
+  return (
+    <SafeAreaView style={[styles.container]} className={className}>
+      {children}
+    </SafeAreaView>
+  );
 };
 
 const styles = StyleSheet.create({

@@ -1,5 +1,4 @@
 import { View, Text, Image, StyleSheet } from "react-native";
-import adsBanner from "@/assets/adbanner.png";
 
 export default function AdBanner() {
   return (
@@ -22,7 +21,7 @@ export default function AdBanner() {
         </Text>
       </View>
       <View className="flex items-center mt-14">
-        <Image source={adsBanner} />
+        <Image source={require("@/assets/adbanner.png")} />
       </View>
     </View>
   );

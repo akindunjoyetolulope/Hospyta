@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { StatusBar } from "expo-status-bar";
 import CustomButton from "@/components/CustomButton";
 import { Link, useRouter } from "expo-router";
 import { Text, View } from "react-native";
@@ -10,6 +11,11 @@ import GoBack from "@/components/GoBack";
 
 const SignUp = () => {
   const router = useRouter();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
 
   return (
     <View className="px-[18px] h-full bg-[#F7F8FA]">
@@ -23,21 +29,21 @@ const SignUp = () => {
 
           <View className="mt-5">
             <InputField
-              onChangeText={() => {}}
+              onChangeText={setFirstName}
               placeholder="First name"
-              value={""}
+              value={firstName}
             />
 
             <InputField
-              onChangeText={() => {}}
+              onChangeText={setLastName}
               placeholder="Last Name"
-              value={""}
+              value={lastName}
             />
 
             <InputField
-              onChangeText={() => {}}
+              onChangeText={setEmail}
               placeholder="example@gmail.com"
-              value={""}
+              value={email}
               prefixIcon={
                 <MaterialCommunityIcons
                   name="email-box"
@@ -48,9 +54,9 @@ const SignUp = () => {
             />
 
             <InputField
-              onChangeText={() => {}}
+              onChangeText={setPassword}
               placeholder="**********"
-              value={""}
+              value={password}
               suffixIcon
             />
           </View>
@@ -62,7 +68,7 @@ const SignUp = () => {
           </View>
 
           <CustomButton
-            onPress={() => router.push("/dashboard")}
+            onPress={() => router.push("(drawer)/dashboard")}
             title="Register"
             buttonStyle="primary"
           />
@@ -74,6 +80,8 @@ const SignUp = () => {
             Already have account? <Link href="/sign-in">Sign in</Link>
           </Text>
         </View>
+
+        <StatusBar style="dark" />
       </SafeAreaView>
     </View>
   );

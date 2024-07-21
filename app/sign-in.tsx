@@ -1,3 +1,4 @@
+import { StatusBar } from "expo-status-bar";
 import CustomButton from "@/components/CustomButton";
 import InputField from "@/components/InputField";
 import SignWithGoogle from "@/components/SignWithGoogle";
@@ -6,9 +7,14 @@ import { View, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import GoBack from "@/components/GoBack";
+import { useState } from "react";
 
 const SignIn = () => {
   const router = useRouter();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <View className="px-[18px] h-full bg-[#F7F8FA]">
       <SafeAreaView className="flex-1 justify-between">
@@ -21,9 +27,9 @@ const SignIn = () => {
 
           <View className=" mt-5">
             <InputField
-              onChangeText={() => {}}
+              onChangeText={setEmail}
               placeholder="example@gmail.com"
-              value={""}
+              value={email}
               prefixIcon={
                 <MaterialCommunityIcons
                   name="email-box"
@@ -34,9 +40,9 @@ const SignIn = () => {
             />
 
             <InputField
-              onChangeText={() => {}}
+              onChangeText={setPassword}
               placeholder="**********"
-              value={""}
+              value={password}
               suffixIcon
             />
           </View>
@@ -46,7 +52,7 @@ const SignIn = () => {
           </Text>
 
           <CustomButton
-            onPress={() => router.push("/dashboard")}
+            onPress={() => router.push("(drawer)/dashboard")}
             title="Sign In"
             buttonStyle="primary"
           />
@@ -58,6 +64,8 @@ const SignIn = () => {
             Don’t have account? <Link href="/sign-up">Register</Link>
           </Text>
         </View>
+
+        <StatusBar style="dark" />
       </SafeAreaView>
     </View>
   );

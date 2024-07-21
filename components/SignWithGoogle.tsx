@@ -1,5 +1,4 @@
 import { View, Text, StyleSheet, Image } from "react-native";
-import googleLogo from "@/assets/google-logo.png";
 
 export default function SignWithGoogle() {
   return (
@@ -16,7 +15,7 @@ export default function SignWithGoogle() {
         style={styles.container}
         className="py-4 justify-center mt-5 bg-[#fff] rounded-[16px]"
       >
-        <Image source={googleLogo} />
+        <Image source={require("@/assets/google-logo.png")} />
         <Text className="ml-4 font-medium text-[#555555] text-[16px]">
           Sign In with Google
         </Text>
