@@ -10,7 +10,7 @@ import {
 
 export default function DrawerContents(props: any) {
   return (
-    <View className="flex-1">
+    <View className="flex-1 bg-#fff">
       <DrawerContentScrollView
         {...props}
         contentContainerStyle={{ backgroundColor: "#4425F5" }}
