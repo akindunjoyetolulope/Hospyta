@@ -56,7 +56,7 @@ export default function App() {
             />
           )}
 
-          <View className="mb-36">
+          <View className="mb-10">
             <View className="flex flex-col justify-between mt-[50px]">
               <Text className="text-white text-3xl leading-10 font-medium">
                 {text[currentImageIndex]}

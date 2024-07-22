@@ -4,6 +4,7 @@ import { Drawer } from "expo-router/drawer";
 import DrawerContents from "@/components/DrawerContents";
 import { AntDesign } from "@expo/vector-icons";
 import NavBar from "@/components/NavBar";
+import { SafeAreaView } from "react-native";
 
 export default function RootLayout() {
   return (
@@ -14,9 +15,19 @@ export default function RootLayout() {
           drawerActiveBackgroundColor: "#f7f5fe",
           drawerActiveTintColor: "#000",
           drawerPosition: "right",
-          headerShown: true,
+          headerBackgroundContainerStyle: {
+            backgroundColor: "#fff",
+          },
+          drawerStyle: {
+            backgroundColor: "#fff",
+          },
 
-          header: ({ navigation }) => <NavBar navigation={navigation} />,
+          headerShown: true,
+          header: ({ navigation }) => (
+            <SafeAreaView style={{ display: "flex" }}>
+              <NavBar navigation={navigation} />
+            </SafeAreaView>
+          ),
         }}
         initialRouteName="dashboard"
       >
